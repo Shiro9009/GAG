@@ -2,8 +2,15 @@ from django.db import models
 
 # Create your models here.
 
+rol = [
+    ("Админ", "Админ"),
+    ("Модератор", "Модератор"),
+    ("Обычный пользователь", "Обычный пользователь"),
+]
+
+
 class roles(models.Model):
-    role_name = models.CharField(verbose_name='название ролей', max_length=30)
+    role_name = models.CharField(verbose_name='название ролей', choices=rol)
 
     class Meta:
         verbose_name = "Роль"
@@ -27,13 +34,13 @@ class Users(models.Model):
         ordering = ["id", "user_name"]
         
 
-    constraints = [
-            models.UniqueConstraint(
-                fields = ["surname", "bio"],
-                condition = models.Q(desc = "Жив"),
-                name = "unique_surname_bio"
-            ),
-            ]
+    # constraints = [
+    #         models.UniqueConstraint(
+    #             fields = ["surname", "bio"],
+    #             condition = models.Q(desc = "Жив"),
+    #             name = "unique_surname_bio"
+    #         ),
+    #         ]
     
     def __str__(self):
         return f"{self.id} {self.user_name}"
@@ -51,15 +58,23 @@ class donations(models.Model):
     class Meta:
         verbose_name = "Донат"
         verbose_name_plural = "Донаты"
+        
 
     def __str__(self):
         return f"{self.id} {self.amount}"
     
 
 
+lev = [ 
+    ("Starter", "Starter"),
+    ("Junior", "Junior"),
+    ("Middle", "Middle"),
+    ("Senior", "Senior")
+]
+
 class level(models.Model):
     level = models.IntegerField(verbose_name='Уровень')
-    name = models.CharField('Название уровня', max_length=50)
+    name = models.CharField('Название уровня', choices=lev)
 
     class Meta:
         verbose_name = "Уровень подписки"
@@ -87,14 +102,25 @@ class subscriptions(models.Model):
         return f"{self.id} {self.start_date}"
 
 
+cate = [
+    ("IRL", "IRL"),
+    ("CREATION", "CREATION"),
+    ("ESPORTS", "ESPORTS"),
+    ("GAMING", "GAMING"),
+    ("MUSIC AND DJS", "MUSIC AND DJS"),
+    ("JUST CHATTING", "JUST CHATTING")
+]
 
 class categories(models.Model):
-    name = models.CharField(verbose_name='Название категории', max_length=50)
+    name = models.CharField(verbose_name='Название категории', choices=cate)
 
 
     class Meta:
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
+        indexes = [
+            models.Index(fields=["name"])
+        ]
 
     def __str__(self):
         return f"{self.id} {self.name}"
