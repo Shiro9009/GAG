@@ -1,32 +1,19 @@
 from django.db import models
 
-# Create your models here.
-
-rol = [
-    ("Админ", "Админ"),
-    ("Модератор", "Модератор"),
-    ("Обычный пользователь", "Обычный пользователь"),
-]
-
-
-class roles(models.Model):
-    role_name = models.CharField(verbose_name='название ролей', choices=rol)
-
-    class Meta:
-        verbose_name = "Роль"
-        verbose_name_plural = "Роли"
-
-    def __str__(self):
-        return f"{self.id} {self.role_name}"
-
 
 class Users(models.Model):
+    rol = [
+    ("Админ", "Админ"),
+    ("Модератор", "Модератор"),
+    ("Обычный пользователь", "Обычный пользователь")
+]
+    
     user_name = models.CharField(verbose_name='имя пользователя', max_length=30)
-    email = models.CharField("Почта", max_length=100)
+    email = models.EmailField("Почта", max_length=100)
     hash_particle = models.CharField('Хэш', max_length=100)
     registration_date = models.DateField("Дата регистрации")
-    nickname = models.CharField("Никнейм", default="No", max_length=50)
-    id_roles = models.ForeignKey(roles, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Роль')
+    nickname = models.CharField("Никнейм", max_length=50)
+    roles = models.CharField('Роль', max_length=50, choices=rol)
 
     class Meta:
         verbose_name = "Пользователь"
@@ -34,13 +21,6 @@ class Users(models.Model):
         ordering = ["id", "user_name"]
         
 
-    # constraints = [
-    #         models.UniqueConstraint(
-    #             fields = ["surname", "bio"],
-    #             condition = models.Q(desc = "Жив"),
-    #             name = "unique_surname_bio"
-    #         ),
-    #         ]
     
     def __str__(self):
         return f"{self.id} {self.user_name}"
@@ -49,7 +29,7 @@ class Users(models.Model):
 
     
 class donations(models.Model):
-    amount = models.IntegerField(verbose_name='сумма')
+    amount = models.DecimalField(verbose_name='сумма', max_digits=7, decimal_places=2) #88888.00
     id_users_from = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, blank=True, related_name='two', verbose_name='Кто задонатил')
     id_users_to = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, blank=True, related_name='One', verbose_name='Кому задонатил')
     requisites = models.CharField('Реквизиты', max_length=24)
@@ -65,14 +45,15 @@ class donations(models.Model):
     
 
 
-lev = [ 
+
+class level(models.Model):
+    lev = [ 
     ("Starter", "Starter"),
     ("Junior", "Junior"),
     ("Middle", "Middle"),
     ("Senior", "Senior")
 ]
 
-class level(models.Model):
     level = models.IntegerField(verbose_name='Уровень')
     name = models.CharField('Название уровня', choices=lev)
 
@@ -102,7 +83,9 @@ class subscriptions(models.Model):
         return f"{self.id} {self.start_date}"
 
 
-cate = [
+
+class streams(models.Model):
+    cate = [
     ("IRL", "IRL"),
     ("CREATION", "CREATION"),
     ("ESPORTS", "ESPORTS"),
@@ -110,26 +93,10 @@ cate = [
     ("MUSIC AND DJS", "MUSIC AND DJS"),
     ("JUST CHATTING", "JUST CHATTING")
 ]
-
-class categories(models.Model):
-    name = models.CharField(verbose_name='Название категории', choices=cate)
-
-
-    class Meta:
-        verbose_name = "Категория"
-        verbose_name_plural = "Категории"
-        indexes = [
-            models.Index(fields=["name"])
-        ]
-
-    def __str__(self):
-        return f"{self.id} {self.name}"
     
-
-class streams(models.Model):
     name = models.CharField('Название стрима', max_length=200)
     id_users = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Пользователь')
-    id_category = models.ForeignKey(categories, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Категрия')
+    category = models.CharField('Категрия', choices=cate)
     status = models.CharField('Статус', max_length=20)
     start_time = models.TimeField('Время начала стрима')
     end_time = models.TimeField('Время окончания стрима')
