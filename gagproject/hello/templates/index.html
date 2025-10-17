@@ -9,8 +9,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>Wstream</title>
 </head>
 
@@ -27,7 +27,7 @@
                     <input class="search-logo" type="text" name="query" placeholder="Поиск">
                 </form>
                 <a href="#" class="user">
-                    <img src="images/Group 3.png" alt="user">
+                    <img src="../static/images/Group 3.png" alt="user">
                 </a>
             </nav>
         </div>
@@ -36,66 +36,18 @@
         <div class="container">
             <h2 class="live-stream">Прямая Трансляция</h2>
             <div class="treams">
+                {% for names in name %}
                 <a href="" class="link-streamer">
                     <div class="streamer">
-                        <img src="images/image (3).png" alt="Обложка" class="pr">
+                        <img src="../static/images/image (3).png" alt="Обложка" class="pr">
                         <div class="information">
-                            <img src="images/image (2).png" alt="ava" class="avatar">
-                            <h3 class="name-stream">😎🤙🏿 хорроринг инвинг (playing bugagashke)</h3>
+                            <img src="../static/images/image (2).png" alt="ava" class="avatar">
+                            <h3 class="name-stream">{{ names.name }}</h3>
                         </div>
-                        <p class="nick">dangerlyoha</p>
+                        <p class="nick">{{ names.id_users }}</p>
                     </div>
                 </a>
-                <a href="" class="link-streamer">
-                    <div class="streamer">
-                        <img src="images/image (3).png" alt="Обложка" class="pr">
-                        <div class="information">
-                            <img src="images/image (2).png" alt="ava" class="avatar">
-                            <h3 class="name-stream">😎🤙🏿 хорроринг инвинг (playing bugagashke)</h3>
-                        </div>
-                        <p class="nick">dangerlyoha</p>
-                    </div>
-                </a>
-                <a href="" class="link-streamer">
-                    <div class="streamer">
-                        <img src="images/image (3).png" alt="Обложка" class="pr">
-                        <div class="information">
-                            <img src="images/image (2).png" alt="ava" class="avatar">
-                            <h3 class="name-stream">😎🤙🏿 хорроринг инвинг (playing bugagashke)</h3>
-                        </div>
-                        <p class="nick">dangerlyoha</p>
-                    </div>
-                </a>
-                <a href="" class="link-streamer">
-                    <div class="streamer">
-                        <img src="images/image (3).png" alt="Обложка" class="pr">
-                        <div class="information">
-                            <img src="images/image (2).png" alt="ava" class="avatar">
-                            <h3 class="name-stream">😎🤙🏿 хорроринг инвинг (playing bugagashke)</h3>
-                        </div>
-                        <p class="nick">dangerlyoha</p>
-                    </div>
-                </a>
-                <a href="" class="link-streamer">
-                    <div class="streamer">
-                        <img src="images/image (3).png" alt="Обложка" class="pr">
-                        <div class="information">
-                            <img src="images/image (2).png" alt="ava" class="avatar">
-                            <h3 class="name-stream">😎🤙🏿 хорроринг инвинг (playing bugagashke)</h3>
-                        </div>
-                        <p class="nick">dangerlyoha</p>
-                    </div>
-                </a>
-                <a href="" class="link-streamer">
-                    <div class="streamer">
-                        <img src="images/image (3).png" alt="Обложка" class="pr">
-                        <div class="information">
-                            <img src="images/image (2).png" alt="ava" class="avatar">
-                            <h3 class="name-stream">😎🤙🏿 хорроринг инвинг (playing bugagashke)</h3>
-                        </div>
-                        <p class="nick">dangerlyoha</p>
-                    </div>
-                </a>
+                {% endfor %}
             </div>
     </main>
     <footer class="footer">

@@ -8,11 +8,11 @@ class Users(models.Model):
     ("Обычный пользователь", "Обычный пользователь")
 ]
     
-    user_name = models.CharField(verbose_name='имя пользователя', max_length=30)
+    user_name = models.CharField('имя пользователя', max_length=30)
     email = models.EmailField("Почта", max_length=100)
     hash_particle = models.CharField('Хэш', max_length=100)
     registration_date = models.DateField("Дата регистрации")
-    nickname = models.CharField("Никнейм", max_length=50)
+    nickname = models.CharField(verbose_name="Никнейм", max_length=50)
     roles = models.CharField('Роль', max_length=50, choices=rol)
 
     class Meta:
@@ -23,7 +23,7 @@ class Users(models.Model):
 
     
     def __str__(self):
-        return f"{self.id} {self.user_name}"
+        return f"{self.nickname}"
 
 
 
@@ -80,7 +80,7 @@ class subscriptions(models.Model):
         verbose_name_plural = "Подписки"
 
     def __str__(self):
-        return f"{self.id} {self.start_date}"
+        return f"{self.start_date}"
 
 
 
