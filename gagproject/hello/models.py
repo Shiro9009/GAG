@@ -72,7 +72,7 @@ class subscriptions(models.Model):
     id_users_from = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, blank=True, related_name='For', verbose_name='Кто подписался')
     id_level = models.ForeignKey(level, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Уровень')
     start_date = models.DateField(verbose_name='Дата подписки')
-    end_date = models.DateField('Дата отписки')
+    end_date = models.DateField('Дата отписки', null=True, blank=True)
     auto_renewal = models.BooleanField('Авто продление')
 
     class Meta:
@@ -99,8 +99,8 @@ class streams(models.Model):
     category = models.CharField('Категрия', choices=cate)
     status = models.CharField('Статус', max_length=20)
     start_time = models.TimeField('Время начала стрима')
-    end_time = models.TimeField('Время окончания стрима')
-    max_viewers = models.IntegerField('макс. кол. зрителей')
+    end_time = models.TimeField('Время окончания стрима', null=True, blank=True)
+    max_viewers = models.IntegerField('макс. кол. зрителей', null=True, blank=True)
 
 
     class Meta:
