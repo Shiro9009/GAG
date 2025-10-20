@@ -6,6 +6,7 @@ body{
     font-family: "Inter", sans-serif;
 }
 
+
 .linklogo{
     cursor: default
 }
@@ -28,6 +29,8 @@ a{
 
 .header{
     background: #2d2d2d;
+    width: 100vw;
+    position: fixed;
 }
 
 .container{
@@ -184,7 +187,7 @@ input, .search-logo {
 .streamer{
     background-color: #2d2d2d;
     min-width: 200px;
-    width: 400px;
+    width: 450px;
     border: 4px solid #9147FF;
     display: block;
 }
@@ -222,6 +225,7 @@ input, .search-logo {
     grid-template-columns: repeat(auto-fill, 400px);
     grid-template-rows: repeat(auto-fill, 400px);
     justify-content: space-evenly;
+    padding-right: 45px;
 }
 
 .streams{
