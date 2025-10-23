@@ -38,6 +38,12 @@ a{
     margin: 0 auto;
 }
 
+.container2{
+    max-width: 2000px;
+    margin: 90px auto;
+    
+}
+
 .menu{
     background: #2d2d2d;
     padding: 10px 20px;
@@ -57,11 +63,11 @@ a{
     line-height: 40px;
     background-color: #2d2d2d;
     outline: none;
-    font-family: "Inter", sans-seri
+    font-family: "Inter", sans-seri;
 }
 
 .search-logo:hover{
-    background: linear-gradient(185deg, #9147ff, #914791);
+    background: linear-gradient(185deg, #9147ff, #d04ed0);
 }
 
 main{

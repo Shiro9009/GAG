@@ -1,16 +1,16 @@
 {% extends "main.html" %}
-
+{% load static %}
 
 {% block main %}
-<div class="container">
+<div class="container2">
     <h2 class="live-stream">Прямая Трансляция</h2>
     <div class="treams">
         {% for names in name %}
         <a href="" class="link-streamer">
             <div class="streamer">
-                <img src="../static/images/image (3).png" alt="Обложка" class="pr">
+                <img src="{% static 'images/image (3).png' %}" alt="Обложка" class="pr">
                 <div class="information">
-                    <img src="../static/images/image (2).png" alt="ava" class="avatar">
+                    <img src="{% static 'images/image (2).png' %}" alt="ava" class="avatar">
                     <h3 class="name-stream">{{ names.name }}</h3>
                 </div>
                 <p class="nick">{{ names.id_users }}</p>
@@ -18,4 +18,5 @@
         </a>
         {% endfor %}
     </div>
+</div>
 {% endblock %}
