@@ -32,23 +32,63 @@
             </nav>
         </div>
     </header>
-    <main class="main">
-        <div class="container">
-            <h2 class="live-stream">Прямая Трансляция</h2>
-            <div class="treams">
-                {% for names in name %}
-                <a href="" class="link-streamer">
-                    <div class="streamer">
-                        <img src="../static/images/image (3).png" alt="Обложка" class="pr">
-                        <div class="information">
-                            <img src="../static/images/image (2).png" alt="ava" class="avatar">
-                            <h3 class="name-stream">{{ names.name }}</h3>
-                        </div>
-                        <p class="nick">{{ names.id_users }}</p>
+    <main class="main-black">
+        <div class="container2">
+            <section class="header-account">
+                <div class="neck">
+                    <div class="imgaes-neck">
+                        <img src="../static/images/my-prof.png" alt="" class="img-nick">
                     </div>
-                </a>
-                {% endfor %}
-            </div>
+                    <div class="necknamee">
+                        <h3 class="niekname-titlle">
+                            Ник пользователя
+                        </h3>
+                        <div class="exit">
+                            <p class="exit-text">Число подписчиков</p>
+                            <p class="exit-text">Выйти</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="start-stream">
+                    <a href="" class="btn-start">
+                        <img src="../static/images/camera.svg" alt="" class="btn-start-img">
+                        начать стрим
+                    </a>
+                    <a href="" class="btn-start-two">
+                        <img src="../static/images/redact.svg" alt="" class="btn-img">
+                    </a>
+                </div>
+            </section>
+            <section class="about">
+                <div class="ABOUT-name-btn">
+                    <h2 class="about-title">About</h2>
+                    <p class="about-text">Роль</p>
+                </div>
+                <div class="information-about">
+                    <dl class="about-list">
+                        <div class="about-item">
+                            <dt class="title-about-item">Имя</dt>
+                            <dd class="text-about-item">DangerLyoha</dd>
+                        </div>
+                        <div class="about-item">
+                            <dt class="title-about-item">Почта</dt>
+                            <dd class="text-about-item">DangerLyoha@gmail.com</dd>
+                        </div>
+                        <div class="about-item">
+                            <dt class="title-about-item">Пароль</dt>
+                            <dd class="text-about-item">ruh**********</dd>
+                        </div>
+                        <div class="about-item">
+                            <dt class="title-about-item">Описание</dt>
+                            <dd class="text-about-item">какой то левый текст</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+            <section class="Subscriptions">
+                
+            </section>
+        </div>
     </main>
     <footer class="footer">
         <div class="container">
