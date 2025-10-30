@@ -41,7 +41,11 @@ a {
 .container2 {
     max-width: 1490px;
     margin: 90px auto;
+}
 
+.container3 {
+    max-width: 1490px;
+    margin: 43px auto;
 }
 
 .menu {
@@ -517,4 +521,222 @@ input,
 
 .Archive-arroy-btn-img {
     height: 50px;
+}
+
+.glav-img {
+    width: 1100px;
+}
+
+.glav-steam-priews {
+    height: 610px;
+}
+
+.glavni-stream {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.chat-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #fff;
+}
+
+
+.chat {
+    width: 400px;
+    height: 610px;
+    padding: 30px;
+    background: #000000;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 8%, rgba(73, 36, 128, 1) 20%, rgba(109, 53, 191, 1) 33%, rgba(145, 71, 255, 1) 53%, rgba(73, 36, 128, 1) 65%, rgba(54, 27, 96, 1) 75%, rgba(36, 18, 64, 1) 87%, rgba(0, 0, 0, 1) 100%);
+}
+
+.exit-chat {
+    width: 35px;
+}
+
+.group-chat {
+    width: 40px;
+}
+
+.chat-title {
+    text-shadow: 3px 2px 2px #fff;
+    color: #9147FF;
+    font-size: 25px;
+}
+
+.chat-massage {
+    width: 330px;
+    font-size: 20px;
+    height: 40px;
+    color: #fff;
+    border: 3px solid #fff;
+    background-color: #000;
+}
+
+.chat-footer {
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.info-streammm {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-streamer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Follow {
+    display: flex;
+    align-items: center;
+}
+
+.user-streamer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.user-streamer-title {
+    font-size: 25px;
+    color: #9147FF;
+}
+
+.user-streamer-catigory {
+    font-weight: 200;
+}
+
+.follow-btn {
+    border: none;
+    background-color: #9147FF;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 700;
+    width: 170px;
+}
+
+.follow-img {
+    width: 40px;
+}
+
+.last-stream {
+    padding-top: 44px;
+    background-image: url(../images/fon-pag4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.last {
+    background: #000000;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 13%, rgba(36, 18, 64, 1) 44%, rgba(73, 36, 128, 1) 67%, rgba(109, 53, 191, 1) 87%);
+    width: 650px;
+    height: 400px;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.last-title{
+    font-size: 25px;
+    background-color: #fff;
+    color: #000;
+    display: inline;
+    border-radius: 25px;
+    padding: 5px 10px;
+}
+
+.last-priew{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.last-priew-img{
+    border-radius: 20px;
+    width: 440px;
+    height: 250px;
+}
+
+.last-stream{
+    margin-bottom: 40px;
+}
+
+.purple{
+    color: #9147FF;
+}
+
+.solid{
+    font-weight: 200;
+}
+
+.follow-botton{
+    height: 60px;
+}
+
+.text-bd{
+    margin-top: 10px;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+.videos-title{
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    width: 200px;
+    margin-bottom: 30px;
+}
+.videos-item{
+    background-color: #ADADAD;
+    border-radius: 30px;
+    padding: 20px;
+    width: 440px;
+    height: 360px;
+}
+
+.videos-img{
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px #000;
+}
+
+
+.videos-info{
+    background-color: #B78EF3;
+    border-bottom-right-radius: 40px;
+    position: relative;
+    right: 20px;
+    margin-top: 8px;
+    padding: 10px;
+    display: flex;
+    color: #000;
+    gap: 20px;
+}
+
+.videos-list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nickii{
+    padding: 0;
 }
