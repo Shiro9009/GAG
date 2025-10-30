@@ -1,156 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "main.html" %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/normalize.css">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>Wstream</title>
-</head>
-
-<body>
-    <header class="header">
-        <div class="container">
-            <nav class="menu">
-                <a href="#" class="linklogo">
-                    <h1 class="title">
-                        Wstream
-                    </h1>
-                </a>
-                <form class="seacrh-all" action="/search" method="get">
-                    <input class="search-logo" type="text" name="query" placeholder="Поиск">
-                </form>
-                <a href="#" class="user">
-                    <img src="../static/images/Group 3.png" alt="user">
-                </a>
-            </nav>
+{% block main %}
+<section class="last-stream">
+    <div class="last">
+        <h4 class="last-title">
+            Онлайн
+        </h4>
+        <div class="last-priew">
+            <img src="{% static 'images/image (3).png' %}" alt="" class="last-priew-img">
+            <p class="name-last-stream">Название стрима</p>
         </div>
-    </header>
-    <main class="main-black">
-        <section class="last-stream">
-            <div class="last">
-                <h4 class="last-title">
-                    Онлайн
-                </h4>
-                <div class="last-priew">
-                    <img src="../static/images/image (3).png" alt="" class="last-priew-img">
-                    <p class="name-last-stream">Название стрима</p>
+    </div>
+</section>
+<div class="container">
+    <section class="header-account">
+        <div class="neck nickii">
+            <div class="imgaes-neck">
+                <img src="{% static 'images/Group 3.png' %}" alt="" class="img-nick">
+            </div>
+            <div class="necknamee">
+                <h3 class="niekname-titlle purple">
+                    Ник пользователя
+                </h3>
+                <div class="exit">
+                    <p class="exit-text solid">Число подписчиков</p>
                 </div>
             </div>
-        </section>
-        <div class="container">
-            <section class="header-account">
-                <div class="neck nickii">
-                    <div class="imgaes-neck">
-                        <img src="../static/images/Group 3.png" alt="" class="img-nick">
-                    </div>
-                    <div class="necknamee">
-                        <h3 class="niekname-titlle purple">
-                            Ник пользователя
-                        </h3>
-                        <div class="exit">
-                            <p class="exit-text solid">Число подписчиков</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="start-stream">
-                    <button class="follow-btn follow-botton">
-                        <img src="../static/images/follow.svg" alt="" class="follow-img">
-                        Follow
-                    </button>
-                    <a href="" class="btn-start-two">
-                        <img src="../static/images/dzin.svg" alt="" class="btn-img">
-                    </a>
-                </div>
-            </section>
-            <section class="about">
-                <div class="ABOUT-name-btn">
-                    <h2 class="about-title">About</h2>
-                    <p class="text-bd">Текст из бд о стримере</p>
-                </div>
-            </section>
-            <section class="Videos">
-                <h2 class="videos-title">Videos</h2>
-                <div class="videos-list">
-                    <div class="videos-item">
-                        <img src="../static/images/videos.jpg" alt="" class="videos-img">
-                        <div class="videos-info">
-                            <div class="steam">
-                                <img src="../static/images/steam.svg" alt="" class="steam-img">
-                            </div>
-                            <div class="videos-informations">
-                                <h4 class="videos-name">Название стрима</h4>
-                                <p class="videos-text">ник пользователя</p>
-                                <p class="videos-text">категория</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="videos-item">
-                        <img src="../static/images/videos.jpg" alt="" class="videos-img">
-                        <div class="videos-info">
-                            <div class="steam">
-                                <img src="../static/images/steam.svg" alt="" class="steam-img">
-                            </div>
-                            <div class="videos-informations">
-                                <h4 class="videos-name">Название стрима</h4>
-                                <p class="videos-text">ник пользователя</p>
-                                <p class="videos-text">категория</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="videos-item">
-                        <img src="../static/images/videos.jpg" alt="" class="videos-img">
-                        <div class="videos-info">
-                            <div class="steam">
-                                <img src="../static/images/steam.svg" alt="" class="steam-img">
-                            </div>
-                            <div class="videos-informations">
-                                <h4 class="videos-name">Название стрима</h4>
-                                <p class="videos-text">ник пользователя</p>
-                                <p class="videos-text">категория</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="left">
-                <p class="text">Lorem ipsum dolor sit amet.</p>
+        <div class="start-stream">
+            <button class="follow-btn follow-botton">
+                <img src="{% static 'images/follow.svg' %}" alt="" class="follow-img">
+                Follow
+            </button>
+            <a href="" class="btn-start-two">
+                <img src="{% static 'images/dzin.svg' %}" alt="" class="btn-img">
+            </a>
+        </div>
+    </section>
+    <section class="about">
+        <div class="ABOUT-name-btn">
+            <h2 class="about-title">About</h2>
+            <p class="text-bd">Текст из бд о стримере</p>
+        </div>
+    </section>
+    <section class="Videos">
+        <h2 class="videos-title">Videos</h2>
+        <div class="videos-list">
+            <div class="videos-item">
+                <img src="{% static 'images/videos.jpg' %}" alt="" class="videos-img">
+                <div class="videos-info">
+                    <div class="steam">
+                        <img src="{% static 'images/steam.svg' %}" alt="" class="steam-img">
+                    </div>
+                    <div class="videos-informations">
+                        <h4 class="videos-name">Название стрима</h4>
+                        <p class="videos-text">ник пользователя</p>
+                        <p class="videos-text">категория</p>
+                    </div>
+                </div>
             </div>
-            <div class="right">
-                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur</p>
+            <div class="videos-item">
+                <img src="{% static 'images/videos.jpg' %}" alt="" class="videos-img">
+                <div class="videos-info">
+                    <div class="steam">
+                        <img src="{% static 'images/steam.svg' %}" alt="" class="steam-img">
+                    </div>
+                    <div class="videos-informations">
+                        <h4 class="videos-name">Название стрима</h4>
+                        <p class="videos-text">ник пользователя</p>
+                        <p class="videos-text">категория</p>
+                    </div>
+                </div>
+            </div>
+            <div class="videos-item">
+                <img src="{% static 'images/videos.jpg' %}" alt="" class="videos-img">
+                <div class="videos-info">
+                    <div class="steam">
+                        <img src="{% static 'images/steam.svg' %}" alt="" class="steam-img">
+                    </div>
+                    <div class="videos-informations">
+                        <h4 class="videos-name">Название стрима</h4>
+                        <p class="videos-text">ник пользователя</p>
+                        <p class="videos-text">категория</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
-    <script>
-        const simpleTrail = document.createElement('div');
-        simpleTrail.className = 'simple-trail';
-        document.body.appendChild(simpleTrail);
-
-        simpleTrail.style.opacity = '1';
-
-        document.addEventListener('mousemove', (e) => {
-            simpleTrail.style.left = (e.clientX - 4) + 'px';
-            simpleTrail.style.top = (e.clientY - 4) + 'px';
-        });
-
-        document.addEventListener('mouseleave', () => {
-            simpleTrail.style.opacity = '0';
-        });
-
-        document.addEventListener('mouseenter', () => {
-            simpleTrail.style.opacity = '1';
-        });
-    </script>
-</body>
-
-</html>
+    </section>
+</div>
+{% endblock %}

@@ -1,110 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "main.html" %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/normalize.css">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>Wstream</title>
-</head>
-
-<body>
-    <header class="header">
-        <div class="container">
-            <nav class="menu">
-                <a href="#" class="linklogo">
-                    <h1 class="title">
-                        Wstream
-                    </h1>
-                </a>
+{% block main %}
+<div class="container3">
+    <section class="glavni-stream">
+        <div class="glav-steam-priews">
+            <img src="{% static 'images/glav-stream.jpg' %}" alt="" class="glav-img">
+        </div>
+        <div class="chat">
+            <div class="chat-head">
+                <img src="{% static 'images/exit.svg' %}" alt="" class="exit-chat">
+                <h4 class="chat-title">STREAM CHAT</h4>
+                <img src="{% static 'images/group.svg' %}" alt="" class="group-chat">
+            </div>
+            <div class="chat-footer">
                 <form class="seacrh-all" action="/search" method="get">
-                    <input class="search-logo" type="text" name="query" placeholder="Поиск">
+                    <input class="search-logo chat-massage" type="text" name="query" placeholder="Send a massage">
                 </form>
-                <a href="#" class="user">
-                    <img src="../static/images/Group 3.png" alt="user">
-                </a>
-            </nav>
-        </div>
-    </header>
-    <main class="main-black">
-        <div class="container3">
-            <section class="glavni-stream">
-                <div class="glav-steam-priews">
-                    <img src="../static/images/glav-stream.jpg" alt="" class="glav-img">
-                </div>
-                    <div class="chat">
-                        <div class="chat-head">
-                            <img src="../static/images/exit.svg" alt="" class="exit-chat">
-                            <h4 class="chat-title">STREAM CHAT</h4>
-                            <img src="../static/images/group.svg" alt="" class="group-chat">
-                        </div>
-                        <div class="chat-footer">
-                            <form class="seacrh-all" action="/search" method="get">
-                                <input class="search-logo chat-massage" type="text" name="query" placeholder="Send a massage">
-                            </form>
-                        </div>
-                    </div>
-            </section>
-            <section class="info-streammm">
-                <div class="user-streamer">
-                    <img src="../static/images/Group 3.png" alt="" class="user-streamer-images">
-                    <div class="user-streamer-text">
-                        <h3 class="user-streamer-title">
-                            Ник стримера
-                        </h3>
-                        <p class="user-streamer-name">
-                            Название стрима
-                        </p>
-                        <p class="user-streamer-catigory">
-                            Категория
-                        </p>
-                    </div>
-                </div>
-                <div class="Follow">
-                    <button class="follow-btn">
-                        <img src="../static/images/follow.svg" alt="" class="follow-img">
-                        Follow
-                    </button>
-                </div>
-            </section>
-        </div>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="left">
-                <p class="text">Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="right">
-                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur</p>
             </div>
         </div>
-    </footer>
-    <script>
-        const simpleTrail = document.createElement('div');
-        simpleTrail.className = 'simple-trail';
-        document.body.appendChild(simpleTrail);
-
-        simpleTrail.style.opacity = '1';
-
-        document.addEventListener('mousemove', (e) => {
-            simpleTrail.style.left = (e.clientX - 4) + 'px';
-            simpleTrail.style.top = (e.clientY - 4) + 'px';
-        });
-
-        document.addEventListener('mouseleave', () => {
-            simpleTrail.style.opacity = '0';
-        });
-
-        document.addEventListener('mouseenter', () => {
-            simpleTrail.style.opacity = '1';
-        });
-    </script>
-</body>
-
-</html>
+    </section>
+    <section class="info-streammm">
+        <div class="user-streamer">
+            <img src="{% static 'images/Group 3.png' %}" alt="" class="user-streamer-images">
+            <div class="user-streamer-text">
+                <h3 class="user-streamer-title">
+                    Ник стримера
+                </h3>
+                <p class="user-streamer-name">
+                    Название стрима
+                </p>
+                <p class="user-streamer-catigory">
+                    Категория
+                </p>
+            </div>
+        </div>
+        <div class="Follow">
+            <button class="follow-btn">
+                <img src="{% static 'images/follow.svg' %}" alt="" class="follow-img">
+                Follow
+            </button>
+        </div>
+    </section>
+</div>
+{% endblock %}
