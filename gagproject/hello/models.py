@@ -8,31 +8,33 @@ class Users(models.Model):
     ("Обычный пользователь", "Обычный пользователь")
 ]
     
-    user_name = models.CharField('имя пользователя', max_length=30)
+    user_name = models.CharField(verbose_name='имя пользователя', max_length=30)
     email = models.EmailField("Почта", max_length=100)
     hash_particle = models.CharField('Хэш', max_length=100)
     registration_date = models.DateField("Дата регистрации")
-    nickname = models.CharField(verbose_name="Никнейм", max_length=50)
+    about = models.TextField("Информация о себе", null=True, blank=True)
+    avatar = models.ImageField('Автарка', upload_to='users_photos/', null=True, blank=True)
+    nickname = models.CharField("Никнейм", max_length=50)
     roles = models.CharField('Роль', max_length=50, choices=rol)
 
     class Meta:
         verbose_name = "Пользователь"
         verbose_name_plural = "Пользователи"
-        ordering = ["id", "user_name"]
         
 
     
     def __str__(self):
-        return f"{self.nickname}"
+        return f"{self.user_name}"
 
 
 
     
-class donations(models.Model):
+class Donations(models.Model):
     amount = models.DecimalField(verbose_name='сумма', max_digits=7, decimal_places=2) #88888.00
     id_users_from = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, blank=True, related_name='two', verbose_name='Кто задонатил')
     id_users_to = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, blank=True, related_name='One', verbose_name='Кому задонатил')
     requisites = models.CharField('Реквизиты', max_length=24)
+    content = models.TextField('Содержание доната', null=True, blank=True)
     date = models.DateField('Дата')
 
     class Meta:
@@ -41,17 +43,17 @@ class donations(models.Model):
         
 
     def __str__(self):
-        return f"{self.id} {self.amount}"
+        return f"{self.id_users_from} > {self.id_users_to}"
     
 
 
 
-class level(models.Model):
+class Level(models.Model):
     lev = [ 
-    ("Starter", "Starter"),
-    ("Junior", "Junior"),
-    ("Middle", "Middle"),
-    ("Senior", "Senior")
+    ("МИНОН", "МИНОН"),
+    ("МИНИМИНОН", "МИНИМОНОН"),
+    ("КУЛИЧ", "КУЛИЧ"),
+    ("МИНЬЁН", "МИНЬЁН")
 ]
 
     level = models.IntegerField(verbose_name='Уровень')
@@ -62,15 +64,15 @@ class level(models.Model):
         verbose_name_plural = "Уровни подписки"
 
     def __str__(self):
-        return f"{self.id} {self.level}"
+        return f"{self.id} = {self.name}"
     
 
 
 
-class subscriptions(models.Model):
+class Subscriptions(models.Model):
     id_users_for = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, blank=True, related_name='three', verbose_name='На кого подписались')
     id_users_from = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, blank=True, related_name='For', verbose_name='Кто подписался')
-    id_level = models.ForeignKey(level, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Уровень')
+    id_level = models.ForeignKey(Level, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Уровень')
     start_date = models.DateField(verbose_name='Дата подписки')
     end_date = models.DateField('Дата отписки', null=True, blank=True)
     auto_renewal = models.BooleanField('Авто продление')
@@ -80,11 +82,11 @@ class subscriptions(models.Model):
         verbose_name_plural = "Подписки"
 
     def __str__(self):
-        return f"{self.start_date}"
+        return f"{self.id_users_from} > {self.id_users_for} = {self.start_date}"
 
 
 
-class streams(models.Model):
+class Streams(models.Model):
     cate = [
     ("IRL", "IRL"),
     ("CREATION", "CREATION"),
@@ -93,11 +95,16 @@ class streams(models.Model):
     ("MUSIC AND DJS", "MUSIC AND DJS"),
     ("JUST CHATTING", "JUST CHATTING")
 ]
+    status = [
+        ("Транслируется", "Транслируется"),
+        ("Завершился", "Завершился")
+    ]
     
     name = models.CharField('Название стрима', max_length=200)
     id_users = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Пользователь')
     category = models.CharField('Категрия', choices=cate)
-    status = models.CharField('Статус', max_length=20)
+    status = models.CharField('Статус', choices=status)
+    preview = models.ImageField('Обложка', upload_to='stream-preview/', null=True, blank=True)
     start_time = models.TimeField('Время начала стрима')
     end_time = models.TimeField('Время окончания стрима', null=True, blank=True)
     max_viewers = models.IntegerField('макс. кол. зрителей', null=True, blank=True)
@@ -108,6 +115,8 @@ class streams(models.Model):
         verbose_name_plural = "Стримы"
 
     def __str__(self):
-        return f"{self.id} {self.name}"
-    
+        return f"{self.name}"
 
+    @staticmethod
+    def get_current_stream():
+        return Streams.objects.filter(status="Транслируется").order_by('-id').first()

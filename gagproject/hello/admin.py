@@ -5,7 +5,7 @@ from .models import *
 
 
 admin.site.register(Users)
-admin.site.register(donations)
-admin.site.register(subscriptions)
-admin.site.register(level)
-admin.site.register(streams)
+admin.site.register(Donations)
+admin.site.register(Subscriptions)
+admin.site.register(Level)
+admin.site.register(Streams)

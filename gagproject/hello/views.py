@@ -1,9 +1,9 @@
 from django.shortcuts import render, HttpResponse
-from .models import streams
+from .models import Streams
 
 # Create your views here.
 def page1(request):
-    name = streams.objects.all()
+    name = Streams.objects.all()
     return render(request, 'base.html', {'name': name})
 
 def page2(request):
