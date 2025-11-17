@@ -5,7 +5,11 @@
 <div class="container3">
     <section class="glavni-stream">
         <div class="glav-steam-priews">
-            <img src="{% static 'images/glav-stream.jpg' %}" alt="" class="glav-img">
+            {% if stream.preview %}
+                <img src="{{ stream.preview.url }}" alt="{{ stream.name }}" class="glav-img">
+            {% else %}
+                <img src="{% static 'images/glav-stream.jpg' %}" alt="{{ stream.name }}" class="glav-img">
+            {% endif %}
         </div>
         <div class="chat">
             <div class="chat-head">
@@ -13,27 +17,42 @@
                 <h4 class="chat-title">STREAM CHAT</h4>
                 <img src="{% static 'images/group.svg' %}" alt="" class="group-chat">
             </div>
+            <div class="chat-messages">
+                <div class="chat-message">
+                    <p class="message-text">Добро пожаловать на стрим!</p>
+                </div>
+            </div>
             <div class="chat-footer">
-                <form class="seacrh-all" action="/search" method="get">
-                    <input class="search-logo chat-massage" type="text" name="query" placeholder="Send a massage">
+                <form class="seacrh-all" action="#" method="post">
+                    {% csrf_token %}
+                    <input class="search-logo chat-massage" type="text" name="message" placeholder="Send a message">
                 </form>
             </div>
         </div>
     </section>
     <section class="info-streammm">
         <div class="user-streamer">
-            <img src="{% static 'images/Group 3.png' %}" alt="" class="user-streamer-images">
+            {% if stream.id_users.avatar %}
+                <img src="{{ stream.id_users.avatar.url }}" alt="{{ stream.id_users.nickname }}" class="user-streamer-images">
+            {% else %}
+                <img src="{% static 'images/Group 3.png' %}" alt="{{ stream.id_users.nickname }}" class="user-streamer-images">
+            {% endif %}
             <div class="user-streamer-text">
                 <h3 class="user-streamer-title">
-                    Ник стримера
+                    {{ stream.id_users.nickname }}
                 </h3>
                 <p class="user-streamer-name">
-                    Название стрима
+                    {{ stream.name }}
                 </p>
                 <p class="user-streamer-catigory">
-                    Категория
+                    {{ stream.category }}
                 </p>
+                <p class="user-streamer-viewers">
+                    Зрителей: {{ stream.max_viewers|default:"0" }}
+                </p>
+                <p class="stream-start-time">Начало: {{ stream.start_time|date:"H:i" }}</p>
             </div>
+            
         </div>
         <div class="Follow">
             <button class="follow-btn">

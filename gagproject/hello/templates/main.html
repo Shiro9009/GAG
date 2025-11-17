@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@
     <header class="header">
         <div class="container">
             <nav class="menu">
-                <a href="#" class="linklogo">
+                <a href="{% url 'home' %}" class="linklogo">
                     <h1 class="title">
                         Wstream
                     </h1>
@@ -28,8 +28,10 @@
                 <form class="seacrh-all" action="/search" method="get">
                     <input class="search-logo" type="text" name="query" placeholder="Поиск">
                 </form>
-                <a href="#" class="user">
-                    <img src="{% static 'images/Group 3.png' %}" alt="user">
+                <a href="{% url 'categories' %}" class="categoryy">Категории</a>
+                <a href="{% url 'profile' %}" class="user">
+                    <!-- Упрощаем проверку для избежания ошибок -->
+                    <img src="{% static 'images/Group 3.png' %}" alt="user" class="user-avatar">
                 </a>
             </nav>
         </div>
@@ -41,10 +43,10 @@
     <footer class="footer">
         <div class="container">
             <div class="left">
-                <p class="text">Lorem ipsum dolor sit amet.</p>
+                <p class="text">Wstream - платформа для live-стриминга</p>
             </div>
             <div class="right">
-                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur</p>
+                <p class="text">© 2024 Wstream. Все права защищены.</p>
             </div>
         </div>
     </footer>

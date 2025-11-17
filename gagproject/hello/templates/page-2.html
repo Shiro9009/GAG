@@ -3,167 +3,112 @@
 
 {% block main %}
 <div class="container2">
-            <section class="header-account">
-                <div class="neck">
-                    <div class="imgaes-neck">
-                        <img src="{% static 'images/my-prof.png' %}" alt="" class="img-nick">
-                    </div>
-                    <div class="necknamee">
-                        <h3 class="niekname-titlle">
-                            Ник пользователя
-                        </h3>
-                        <div class="exit">
-                            <p class="exit-text">Число подписчиков</p>
-                            <p class="exit-text">Выйти</p>
-                        </div>
-                    </div>
+    <section class="header-account">
+        <div class="neck">
+            <div class="imgaes-neck">
+                {% if user_profile.avatar %}
+                    <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.nickname }}" class="img-nick">
+                {% else %}
+                    <img src="{% static 'images/my-prof.png' %}" alt="{{ user_profile.nickname }}" class="img-nick">
+                {% endif %}
+            </div>
+            <div class="necknamee">
+                <h3 class="niekname-titlle">
+                    {{ user_profile.nickname|default:"Ник пользователя" }}
+                </h3>
+                <div class="exit">
+                    <p class="exit-text">{{ user_profile.subscribers.count }} подписчиков</p>
+                    <p class="exit-text">Выйти</p>
                 </div>
-                <div class="start-stream">
-                    <a href="" class="btn-start">
-                        <img src="{% static 'images/camera.svg' %}" alt="" class="btn-start-img">
-                        начать стрим
-                    </a>
-                    <a href="" class="btn-start-two">
-                        <img src="{% static 'images/redact.svg' %}" alt="" class="btn-img">
-                    </a>
-                </div>
-            </section>
-            <section class="about">
-                <div class="ABOUT-name-btn">
-                    <h2 class="about-title">About</h2>
-                    <p class="about-text">Роль</p>
-                </div>
-                <div class="information-about">
-                    <dl class="about-list">
-                        <div class="about-item">
-                            <dt class="title-about-item">Имя</dt>
-                            <dd class="text-about-item">DangerLyoha</dd>
-                        </div>
-                        <div class="about-item">
-                            <dt class="title-about-item">Почта</dt>
-                            <dd class="text-about-item">DangerLyoha@gmail.com</dd>
-                        </div>
-                        <div class="about-item">
-                            <dt class="title-about-item">Пароль</dt>
-                            <dd class="text-about-item">ruh**********</dd>
-                        </div>
-                        <div class="about-item">
-                            <dt class="title-about-item">Описание</dt>
-                            <dd class="text-about-item">какой то левый текст</dd>
-                        </div>
-                    </dl>
-                </div>
-            </section>
-            <section class="Subscriptions">
-                <h2 class="subscriptions-title">Subscriptions</h2>
-                <div class="subscriptions-list">
-                    <div class="subscriptions-item">
-                        <div class="subscriptions-images">
-                            <img src="{% static 'images/subscriptions-avatar.jpg' %}" alt="" class="subscriptions-img">
-                        </div>
-                        <div class="subscriptions-name">
-                            <h3 class="nickname">Ник стримера</h3>
-                            <button class="subscriptions-btn">Unsubscribe</button>
-                        </div>
-                    </div>
-                    <div class="subscriptions-item">
-                        <div class="subscriptions-images">
-                            <img src="{% static 'images/subscriptions-avatar.jpg' %}" alt="" class="subscriptions-img">
-                        </div>
-                        <div class="subscriptions-name">
-                            <h3 class="nickname">Ник стримера</h3>
-                            <button class="subscriptions-btn">Unsubscribe</button>
-                        </div>
-                    </div>
-                    <div class="subscriptions-item">
-                        <div class="subscriptions-images">
-                            <img src="{% static 'images/subscriptions-avatar.jpg' %}" alt="" class="subscriptions-img">
-                        </div>
-                        <div class="subscriptions-name">
-                            <h3 class="nickname">Ник стримера</h3>
-                            <button class="subscriptions-btn">Unsubscribe</button>
-                        </div>
-                    </div>
-                    <div class="subscriptions-item">
-                        <div class="subscriptions-images">
-                            <img src="{% static 'images/subscriptions-avatar.jpg' %}" alt="" class="subscriptions-img">
-                        </div>
-                        <div class="subscriptions-name">
-                            <h3 class="nickname">Ник стримера</h3>
-                            <button class="subscriptions-btn">Unsubscribe</button>
-                        </div>
-                    </div>
-                    <div class="subscriptions-item">
-                        <div class="subscriptions-images">
-                            <img src="{% static 'images/subscriptions-avatar.jpg' %}" alt="" class="subscriptions-img">
-                        </div>
-                        <div class="subscriptions-name">
-                            <h3 class="nickname">Ник стримера</h3>
-                            <button class="subscriptions-btn">Unsubscribe</button>
-                        </div>
-                    </div>
-                    <div class="subscriptions-item">
-                        <div class="subscriptions-images">
-                            <img src="{% static 'images/subscriptions-avatar.jpg' %}" alt="" class="subscriptions-img">
-                        </div>
-                        <div class="subscriptions-name">
-                            <h3 class="nickname">Ник стримера</h3>
-                            <button class="subscriptions-btn">Unsubscribe</button>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="arroy-btn">
-                    <img src="{% static 'images/wiht-arroy.svg' %}" alt="" class="arroy-img">
-                </a>
-            </section>
-            <section class="Archive">
-                <h2 class="Archive-title">Archive</h2>
-                <div class="Archive-list">
-                    <div class="Archive-item">
-                        <div class="Archive-images">
-                            <img src="{% static 'images/Archive-ava.jpg' %}" alt="" class="Archive-img">
-                        </div>
-                        <div class="Archive-name-stream">
-                            <h3 class="Archive-names-stream">Название стрима</h3>
-                            <p class="date-stream">Дата стрима:</p>
-                            <p class="category-stream">Категории стрима:</p>
-                        </div>
-                    </div>
-                    <div class="Archive-item">
-                        <div class="Archive-images">
-                            <img src="{% static 'images/Archive-ava.jpg' %}" alt="" class="Archive-img">
-                        </div>
-                        <div class="Archive-name-stream">
-                            <h3 class="Archive-names-stream">Название стрима</h3>
-                            <p class="date-stream">Дата стрима:</p>
-                            <p class="category-stream">Категории стрима:</p>
-                        </div>
-                    </div>
-                    <div class="Archive-item">
-                        <div class="Archive-images">
-                            <img src="{% static 'images/Archive-ava.jpg' %}" alt="" class="Archive-img">
-                        </div>
-                        <div class="Archive-name-stream">
-                            <h3 class="Archive-names-stream">Название стрима</h3>
-                            <p class="date-stream">Дата стрима:</p>
-                            <p class="category-stream">Категории стрима:</p>
-                        </div>
-                    </div>
-                    <div class="Archive-item">
-                        <div class="Archive-images">
-                            <img src="{% static 'images/Archive-ava.jpg' %}" alt="" class="Archive-img">
-                        </div>
-                        <div class="Archive-name-stream">
-                            <h3 class="Archive-names-stream">Название стрима</h3>
-                            <p class="date-stream">Дата стрима:</p>
-                            <p class="category-stream">Категории стрима:</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="Archive-arroy-btn">
-                    Больше
-                    <img src="{% static 'images/wiht-arroy.svg' %}" alt="" class="Archive-arroy-btn-img">
-                </a>
-            </section>
+            </div>
         </div>
+        <div class="start-stream">
+            <a href="#" class="btn-start">
+                <img src="{% static 'images/camera.svg' %}" alt="" class="btn-start-img">
+                начать стрим
+            </a>
+            <a href="#" class="btn-start-two">
+                <img src="{% static 'images/redact.svg' %}" alt="" class="btn-img">
+            </a>
+        </div>
+    </section>
+    <section class="about">
+        <div class="ABOUT-name-btn">
+            <h2 class="about-title">About</h2>
+            <p class="about-text">{{ user_profile.roles|default:"Пользователь" }}</p>
+        </div>
+        <div class="information-about">
+            <dl class="about-list">
+                <div class="about-item">
+                    <dt class="title-about-item">Имя</dt>
+                    <dd class="text-about-item">{{ user_profile.user_name|default:"Не указано" }}</dd>
+                </div>
+                <div class="about-item">
+                    <dt class="title-about-item">Почта</dt>
+                    <dd class="text-about-item">{{ user_profile.email|default:"Не указана" }}</dd>
+                </div>
+                <div class="about-item">
+                    <dt class="title-about-item">Пароль</dt>
+                    <dd class="text-about-item">•••••••••••</dd>
+                </div>
+                <div class="about-item">
+                    <dt class="title-about-item">Описание</dt>
+                    <dd class="text-about-item">{{ user_profile.about|default:"Описание не добавлено" }}</dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+    <section class="Subscriptions">
+        <h2 class="subscriptions-title">Subscriptions</h2>
+        <div class="subscriptions-list">
+            {% for subscription in subscriptions %}
+            <div class="subscriptions-item">
+                <div class="subscriptions-images">
+                    {% if subscription.id_users_for.avatar %}
+                        <img src="{{ subscription.id_users_for.avatar.url }}" alt="{{ subscription.id_users_for.nickname }}" class="subscriptions-img">
+                    {% else %}
+                        <img src="{% static 'images/subscriptions-avatar.jpg' %}" alt="{{ subscription.id_users_for.nickname }}" class="subscriptions-img">
+                    {% endif %}
+                </div>
+                <div class="subscriptions-name">
+                    <h3 class="nickname">{{ subscription.id_users_for.nickname }}</h3>
+                    <button class="subscriptions-btn">Unsubscribe</button>
+                </div>
+            </div>
+            {% empty %}
+            <p class="no-subscriptions">Нет подписок</p>
+            {% endfor %}
+        </div>
+        <a href="#" class="arroy-btn">
+            <img src="{% static 'images/wiht-arroy.svg' %}" alt="" class="arroy-img">
+        </a>
+    </section>
+    <section class="Archive">
+        <h2 class="Archive-title">Archive</h2>
+        <div class="Archive-list">
+            {% for stream in archive_streams %}
+            <div class="Archive-item">
+                <div class="Archive-images">
+                    {% if stream.preview %}
+                        <img src="{{ stream.preview.url }}" alt="{{ stream.name }}" class="Archive-img">
+                    {% else %}
+                        <img src="{% static 'images/Archive-ava.jpg' %}" alt="{{ stream.name }}" class="Archive-img">
+                    {% endif %}
+                </div>
+                <div class="Archive-name-stream">
+                    <h3 class="Archive-names-stream">{{ stream.name }}</h3>
+                    <p class="date-stream">Дата стрима: {{ stream.start_time|date:"d.m.Y" }}</p>
+                    <p class="category-stream">Категория: {{ stream.category.name }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <p class="no-archive">Нет архивных стримов</p>
+            {% endfor %}
+        </div>
+        <a href="#" class="Archive-arroy-btn">
+            Больше
+            <img src="{% static 'images/wiht-arroy.svg' %}" alt="" class="Archive-arroy-btn-img">
+        </a>
+    </section>
+</div>
 {% endblock %}

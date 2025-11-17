@@ -2,29 +2,41 @@
 {% load static %}
 
 {% block main %}
+{% if current_stream %}
 <section class="last-stream">
     <div class="last">
         <h4 class="last-title">
             Онлайн
         </h4>
         <div class="last-priew">
-            <img src="{% static 'images/image (3).png' %}" alt="" class="last-priew-img">
-            <p class="name-last-stream">Название стрима</p>
+            {% if current_stream.preview %}
+                <img src="{{ current_stream.preview.url }}" alt="{{ current_stream.name }}" class="last-priew-img">
+            {% else %}
+                <img src="{% static 'images/image (3).png' %}" alt="{{ current_stream.name }}" class="last-priew-img">
+            {% endif %}
+            <p class="name-last-stream">{{ current_stream.name }}</p>
         </div>
     </div>
 </section>
+{% endif %}
+
 <div class="container">
     <section class="header-account">
         <div class="neck nickii">
             <div class="imgaes-neck">
-                <img src="{% static 'images/Group 3.png' %}" alt="" class="img-nick">
+                {% if user_profile.avatar %}
+                    <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.nickname }}" class="img-nick">
+                {% else %}
+                    <img src="{% static 'images/Group 3.png' %}" alt="{{ user_profile.nickname }}" class="img-nick">
+                {% endif %}
             </div>
             <div class="necknamee">
                 <h3 class="niekname-titlle purple">
-                    Ник пользователя
+                    {{ user_profile.nickname|default:"Пользователь" }}
                 </h3>
                 <div class="exit">
-                    <p class="exit-text solid">Число подписчиков</p>
+                    <p class="exit-text solid">{{ subscriber_count }} подписчиков</p>
+                    <p class="exit-text solid">{{ archive_streams|length }} стримов в архиве</p>
                 </div>
             </div>
         </div>
@@ -33,60 +45,72 @@
                 <img src="{% static 'images/follow.svg' %}" alt="" class="follow-img">
                 Follow
             </button>
-            <a href="" class="btn-start-two">
+            <a href="#" class="btn-start-two">
                 <img src="{% static 'images/dzin.svg' %}" alt="" class="btn-img">
             </a>
         </div>
     </section>
+    
     <section class="about">
         <div class="ABOUT-name-btn">
             <h2 class="about-title">About</h2>
-            <p class="text-bd">Текст из бд о стримере</p>
+            <p class="text-bd">{{ user_profile.about|default:"Пользователь еще не добавил информацию о себе." }}</p>
+        </div>
+        <div class="user-stats">
+            <div class="stat-item">
+                <span class="stat-number">{{ user_profile.registration_date|date:"d.m.Y" }}</span>
+                <span class="stat-label">Дата регистрации</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">{{ user_profile.roles|default:"Пользователь" }}</span>
+                <span class="stat-label">Роль</span>
+            </div>
         </div>
     </section>
+    
     <section class="Videos">
         <h2 class="videos-title">Videos</h2>
         <div class="videos-list">
+            {% for stream in archive_streams %}
             <div class="videos-item">
-                <img src="{% static 'images/videos.jpg' %}" alt="" class="videos-img">
+                {% if stream.preview %}
+                    <img src="{{ stream.preview.url }}" alt="{{ stream.name }}" class="videos-img">
+                {% else %}
+                    <img src="{% static 'images/videos.jpg' %}" alt="{{ stream.name }}" class="videos-img">
+                {% endif %}
                 <div class="videos-info">
                     <div class="steam">
                         <img src="{% static 'images/steam.svg' %}" alt="" class="steam-img">
                     </div>
                     <div class="videos-informations">
-                        <h4 class="videos-name">Название стрима</h4>
-                        <p class="videos-text">ник пользователя</p>
-                        <p class="videos-text">категория</p>
+                        <h4 class="videos-name">{{ stream.name }}</h4>
+                        <p class="videos-text">{{ user_profile.nickname }}</p>
+                        <p class="videos-text">
+                            {% if stream.category %}
+                                {{ stream.category.name }}
+                            {% else %}
+                                Без категории
+                            {% endif %}
+                        </p>
+                        <p class="videos-date">{{ stream.start_time|date:"d.m.Y H:i" }}</p>
                     </div>
                 </div>
             </div>
-            <div class="videos-item">
-                <img src="{% static 'images/videos.jpg' %}" alt="" class="videos-img">
-                <div class="videos-info">
-                    <div class="steam">
-                        <img src="{% static 'images/steam.svg' %}" alt="" class="steam-img">
-                    </div>
-                    <div class="videos-informations">
-                        <h4 class="videos-name">Название стрима</h4>
-                        <p class="videos-text">ник пользователя</p>
-                        <p class="videos-text">категория</p>
-                    </div>
-                </div>
+            {% empty %}
+            <div class="no-videos">
+                <p>Пользователь еще не проводил стримов</p>
             </div>
-            <div class="videos-item">
-                <img src="{% static 'images/videos.jpg' %}" alt="" class="videos-img">
-                <div class="videos-info">
-                    <div class="steam">
-                        <img src="{% static 'images/steam.svg' %}" alt="" class="steam-img">
-                    </div>
-                    <div class="videos-informations">
-                        <h4 class="videos-name">Название стрима</h4>
-                        <p class="videos-text">ник пользователя</p>
-                        <p class="videos-text">категория</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
+        
+        {% if archive_streams|length > 3 %}
+        <div class="show-more-container">
+            <a href="#" class="show-more-btn">
+                Показать больше
+                <img src="{% static 'images/wiht-arroy.svg' %}" alt="" class="show-more-img">
+            </a>
+        </div>
+        {% endif %}
     </section>
 </div>
 {% endblock %}

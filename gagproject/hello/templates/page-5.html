@@ -3,71 +3,29 @@
 
 {% block main %}
 <div class="container">
-            <section class="categories-streams">
-                <h1 class="categories-streams-title">categories</h1>
-                <h3 class="categoris-streams-popular">Popular</h3>
-                <div class="category-list">
-                    <div class="category-item">
-                        <img src="{% static 'images/cs.jpg' %}" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                    <div class="category-item">
-                        <img src="{% static 'images/cs.jpg' %}" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                    <div class="category-item">
-                        <img src="{% static 'images/cs.jpg' %}" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                    <div class="category-item">
-                        <img src="{% static 'images/cs.jpg' %}" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                    <div class="category-item">
-                        <img src="{% static 'images/cs.jpg' %}" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                    <div class="category-item">
-                        <img src="{% static 'images/cs.jpg' %}" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                    <div class="category-item">
-                        <img src="../static/images/cs.jpg" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                    <div class="category-item">
-                        <img src="{% static 'images/cs.jpg' %}" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                    <div class="category-item">
-                        <img src="{% static 'images/cs.jpg' %}" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                    <div class="category-item">
-                        <img src="{% static 'images/cs.jpg' %}" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                    <div class="category-item">
-                        <img src="{% static 'images/cs.jpg' %}" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                    <div class="category-item">
-                        <img src="{% static 'images/cs.jpg' %}" alt="" class="category-item-img">
-                        <h4 class="category-item-title">Название категории</h4>
-                        <p class="category-item-text">Кол-во зрителей</p>
-                    </div>
-                </div>
-            </section>
+    <section class="categories-streams">
+        <h1 class="categories-streams-title">Categories</h1>
+        <h3 class="categoris-streams-popular">Popular</h3>
+        <div class="category-list">
+            {% for category in categories %}
+            <div class="category-item">
+                {% if category.image %}
+                    <img src="{{ category.image.url }}" alt="{{ category.name }}" class="category-item-img">
+                {% else %}
+                    <img src="{% static 'images/cs.jpg' %}" alt="{{ category.name }}" class="category-item-img">
+                {% endif %}
+                <h4 class="category-item-title">{{ category.name }}</h4>
+                <p class="category-item-text">{{ category.total_streams }} стримов</p>
+                <p class="category-item-text">{{ category.current_viewers }} зрителей онлайн</p>
+                <p class="category-item-description">{{ category.description|default:"" }}</p>
+                <a href="{% url 'home' %}?category={{ category.name }}" class="category-link">Смотреть стримы</a>
+            </div>
+            {% empty %}
+            <div class="no-categories">
+                <p>Пока нет категорий с активными стримами</p>
+            </div>
+            {% endfor %}
         </div>
+    </section>
+</div>
 {% endblock %}

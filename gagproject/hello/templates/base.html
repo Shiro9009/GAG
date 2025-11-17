@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -19,15 +19,14 @@
     <header class="header">
         <div class="container">
             <nav class="menu">
-                <a href="#" class="linklogo">
-                    <h1 class="title">
-                        Wstream
-                    </h1>
+                <a href="{% url 'home' %}" class="linklogo">
+                    <h1 class="title">Wstream</h1>
                 </a>
                 <form class="seacrh-all" action="/search" method="get">
                     <input class="search-logo" type="text" name="query" placeholder="Поиск">
                 </form>
-                <a href="#" class="user">
+                <a href="{% url 'categories' %}" class="categoryy">Категории</a>
+                <a href="{% url 'profile' %}" class="user">
                     <img src="{% static 'images/Group 3.png' %}" alt="user">
                 </a>
             </nav>
@@ -37,17 +36,31 @@
         <div class="container2">
             <h2 class="live-stream">Прямая Трансляция</h2>
             <div class="treams">
-                {% for names in name %}
-                <a href="" class="link-streamer">
+                {% for stream in streams %}
+                <a href="{% url 'stream_detail' stream.id %}" class="link-streamer">
                     <div class="streamer">
+                        {% if stream.preview %}
+                        <img src="{{ stream.preview.url }}" alt="Обложка" class="pr">
+                        {% else %}
                         <img src="{% static 'images/image (3).png' %}" alt="Обложка" class="pr">
+                        {% endif %}
                         <div class="information">
+                            {% if stream.id_users.avatar %}
+                            <img src="{{ stream.id_users.avatar.url }}" alt="ava" class="avatar">
+                            {% else %}
                             <img src="{% static 'images/image (2).png' %}" alt="ava" class="avatar">
-                            <h3 class="name-stream">{{ names.name }}</h3>
+                            {% endif %}
+                            <h3 class="name-stream">{{ stream.name }}</h3>
                         </div>
-                        <p class="nick">{{ names.id_users }}</p>
+                        <div class="right-left">
+                            <p class="nick">{{ stream.id_users.nickname }}</p>
+                            <p class="viewers">Зрителей: {{ stream.max_viewers|default:"0" }}</p>
+                        </div>
+                        <p class="category">{{ stream.category }}</p>
                     </div>
                 </a>
+                {% empty %}
+                <p class="no-streams">Нет активных стримов</p>
                 {% endfor %}
             </div>
         </div>
@@ -55,10 +68,10 @@
     <footer class="footer">
         <div class="container">
             <div class="left">
-                <p class="text">Lorem ipsum dolor sit amet.</p>
+                <p class="text">Wstream - лучшая платформа для стриминга</p>
             </div>
             <div class="right">
-                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur</p>
+                <p class="text">© 2024 Wstream. Все права защищены.</p>
             </div>
         </div>
     </footer>
