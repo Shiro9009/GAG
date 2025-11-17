@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <title>Wstream</title>
+</head>
+
+<body class="log">
+    <main>
+        <section class="LogIn">
+            <img src="{% static 'images/log.jpg' %}" alt="" class="logIn-img">
+            <div class="avtoriz">
+                <h1 class="login-title">Wstream</h1>
+                <form method="POST" class="log-in">
+                    <input type="text" name="email" placeholder="Логин" required class="logIn-input">
+                    <input type="password" name="password" placeholder="Пароль" required class="logIn-input">
+                    <button type="submit" name="login" class="logInt-btn">Войти</button>
+                    <a href="http://127.0.0.1:8000/regist/" class="log-reg">Создать</a>
+                </form>
+            </div>
+        </section>
+    </main>
+        <script>
+        const simpleTrail = document.createElement('div');
+        simpleTrail.className = 'simple-trail';
+        document.body.appendChild(simpleTrail);
+
+        simpleTrail.style.opacity = '1';
+
+        document.addEventListener('mousemove', (e) => {
+            simpleTrail.style.left = (e.clientX - 4) + 'px';
+            simpleTrail.style.top = (e.clientY - 4) + 'px';
+        });
+
+        document.addEventListener('mouseleave', () => {
+            simpleTrail.style.opacity = '0';
+        });
+
+        document.addEventListener('mouseenter', () => {
+            simpleTrail.style.opacity = '1';
+        });
+    </script>
+</body>
+
+</html>

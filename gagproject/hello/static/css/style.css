@@ -58,9 +58,7 @@ a {
     border-bottom: 1px solid #333;
 }
 
-.glav-img{
-
-}
+.glav-img {}
 
 .search-logo {
     width: 600px;
@@ -75,7 +73,7 @@ a {
     font-family: "Inter", sans-seri;
 }
 
-.categoryy{
+.categoryy {
     font-size: 25px;
     font-weight: 700;
     text-transform: uppercase;
@@ -85,7 +83,7 @@ a {
     transition: all 0.5s;
 }
 
-.categoryy:hover{
+.categoryy:hover {
     transform: scale(1.3);
 }
 
@@ -198,7 +196,7 @@ a {
 a,
 input,
 button,
-input,
+
 .search-logo,
 .user,
 .linklogo {
@@ -477,13 +475,13 @@ input,
     border: 3px solid #fff;
 }
 
-.user-streamer-images{
+.user-streamer-images {
     width: 90px;
     height: 90px;
     border-radius: 50px;
 }
 
-.avatar{
+.avatar {
     width: 50px;
     height: 50px;
     border-radius: 50px;
@@ -832,13 +830,105 @@ input,
 
 }
 
-.right-left{
+.right-left {
     display: flex;
     justify-content: space-between;
     margin: 0 10px;
 }
 
-.category{
+.category {
     text-align: right;
     margin-right: 10px;
+}
+
+.log {
+    background-color: #111;
+}
+
+.logIn-img{
+    width: 70%;
+    height: 100vh;
+    border-bottom-right-radius: 60px;
+    border-top-right-radius: 60px;
+}
+
+.LogIn{
+    display: flex;
+}
+
+.login-title{
+    font-size: 70px;
+    color: #fff;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+.avtoriz{
+    width: 30%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.log-in{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logIn-input{
+    width: 300px;
+    padding: 5px;
+    border-radius: 10px;
+    background: transparent;
+    text-align: center;
+    outline: none;
+    line-height: 0;
+    color: #9147FF;
+    font-weight: 700;
+}
+
+input[type="email"]
+{
+    font-size:25px;
+}
+
+input[type="text"]
+{
+    font-size:25px;
+}
+
+input[type="password"]
+{
+    font-size:25px;
+}
+
+.logInt-btn{
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #9147FF;
+    border: none;
+    box-shadow: 1px 3px 3px #4c0aaf;
+    transition: all 0.4s;
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.reg{
+    font-size: 19px;
+}
+
+.logInt-btn:hover{
+    transform: scale(1.1);
+}
+
+.log-reg{
+    text-align: center;
+    color: #636363;
 }
