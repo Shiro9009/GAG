@@ -920,6 +920,10 @@ input[type="password"]
     color: #fff;
 }
 
+.pink {
+    background-color: #f744e8;
+}
+
 .reg{
     font-size: 19px;
 }
