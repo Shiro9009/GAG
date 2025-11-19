@@ -76,17 +76,7 @@ class Subscriptions(models.Model):
 
 
 class StreamCategory(models.Model):
-    """Модель для категорий стримов"""
-    cate = [
-        ("IRL", "IRL"),
-        ("CREATION", "CREATION"),
-        ("ESPORTS", "ESPORTS"),
-        ("GAMING", "GAMING"),
-        ("MUSIC AND DJS", "MUSIC AND DJS"),
-        ("JUST CHATTING", "JUST CHATTING")
-    ]
-    
-    name = models.CharField('Название категории', max_length=50, choices=cate, unique=True)
+    name = models.CharField('Название категории', max_length=50,  unique=True)
     image = models.ImageField('Изображение категории', upload_to='category_images/', null=True, blank=True)
     description = models.TextField('Описание категории', null=True, blank=True)
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
