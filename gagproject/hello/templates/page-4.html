@@ -10,9 +10,9 @@
         </h4>
         <div class="last-priew">
             {% if current_stream.preview %}
-                <img src="{{ current_stream.preview.url }}" alt="{{ current_stream.name }}" class="last-priew-img">
+            <img src="{{ current_stream.preview.url }}" alt="{{ current_stream.name }}" class="last-priew-img">
             {% else %}
-                <img src="{% static 'images/image (3).png' %}" alt="{{ current_stream.name }}" class="last-priew-img">
+            <img src="{% static 'images/image (3).png' %}" alt="{{ current_stream.name }}" class="last-priew-img">
             {% endif %}
             <p class="name-last-stream">{{ current_stream.name }}</p>
         </div>
@@ -25,9 +25,9 @@
         <div class="neck nickii">
             <div class="imgaes-neck">
                 {% if user_profile.avatar %}
-                    <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.nickname }}" class="img-nick">
+                <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.nickname }}" class="img-nick">
                 {% else %}
-                    <img src="{% static 'images/Group 3.png' %}" alt="{{ user_profile.nickname }}" class="img-nick">
+                <img src="{% static 'images/Group 3.png' %}" alt="{{ user_profile.nickname }}" class="img-nick">
                 {% endif %}
             </div>
             <div class="necknamee">
@@ -50,7 +50,7 @@
             </a>
         </div>
     </section>
-    
+
     <section class="about">
         <div class="ABOUT-name-btn">
             <h2 class="about-title">About</h2>
@@ -67,16 +67,15 @@
             </div>
         </div>
     </section>
-    
     <section class="Videos">
         <h2 class="videos-title">Videos</h2>
         <div class="videos-list">
             {% for stream in archive_streams %}
             <div class="videos-item">
                 {% if stream.preview %}
-                    <img src="{{ stream.preview.url }}" alt="{{ stream.name }}" class="videos-img">
+                <img src="{{ stream.preview.url }}" alt="{{ stream.name }}" class="videos-img">
                 {% else %}
-                    <img src="{% static 'images/videos.jpg' %}" alt="{{ stream.name }}" class="videos-img">
+                <img src="{% static 'images/videos.jpg' %}" alt="{{ stream.name }}" class="videos-img">
                 {% endif %}
                 <div class="videos-info">
                     <div class="steam">
@@ -87,9 +86,9 @@
                         <p class="videos-text">{{ user_profile.nickname }}</p>
                         <p class="videos-text">
                             {% if stream.category %}
-                                {{ stream.category.name }}
+                            {{ stream.category.name }}
                             {% else %}
-                                Без категории
+                            Без категории
                             {% endif %}
                         </p>
                         <p class="videos-date">{{ stream.start_time|date:"d.m.Y H:i" }}</p>
@@ -102,7 +101,7 @@
             </div>
             {% endfor %}
         </div>
-        
+
         {% if archive_streams|length > 3 %}
         <div class="show-more-container">
             <a href="#" class="show-more-btn">

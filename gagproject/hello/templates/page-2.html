@@ -7,9 +7,9 @@
         <div class="neck">
             <div class="imgaes-neck">
                 {% if user_profile.avatar %}
-                    <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.nickname }}" class="img-nick">
+                <img src="{{ user_profile.avatar.url }}" alt="{{ user_profile.nickname }}" class="img-nick">
                 {% else %}
-                    <img src="{% static 'images/my-prof.png' %}" alt="{{ user_profile.nickname }}" class="img-nick">
+                <img src="{% static 'images/my-prof.png' %}" alt="{{ user_profile.nickname }}" class="img-nick">
                 {% endif %}
             </div>
             <div class="necknamee">
@@ -65,9 +65,11 @@
             <div class="subscriptions-item">
                 <div class="subscriptions-images">
                     {% if subscription.id_users_for.avatar %}
-                        <img src="{{ subscription.id_users_for.avatar.url }}" alt="{{ subscription.id_users_for.nickname }}" class="subscriptions-img">
+                    <img src="{{ subscription.id_users_for.avatar.url }}" alt="{{ subscription.id_users_for.nickname }}"
+                        class="subscriptions-img">
                     {% else %}
-                        <img src="{% static 'images/subscriptions-avatar.jpg' %}" alt="{{ subscription.id_users_for.nickname }}" class="subscriptions-img">
+                    <img src="{% static 'images/subscriptions-avatar.jpg' %}"
+                        alt="{{ subscription.id_users_for.nickname }}" class="subscriptions-img">
                     {% endif %}
                 </div>
                 <div class="subscriptions-name">
@@ -90,9 +92,9 @@
             <div class="Archive-item">
                 <div class="Archive-images">
                     {% if stream.preview %}
-                        <img src="{{ stream.preview.url }}" alt="{{ stream.name }}" class="Archive-img">
+                    <img src="{{ stream.preview.url }}" alt="{{ stream.name }}" class="Archive-img">
                     {% else %}
-                        <img src="{% static 'images/Archive-ava.jpg' %}" alt="{{ stream.name }}" class="Archive-img">
+                    <img src="{% static 'images/Archive-ava.jpg' %}" alt="{{ stream.name }}" class="Archive-img">
                     {% endif %}
                 </div>
                 <div class="Archive-name-stream">
@@ -109,6 +111,46 @@
             Больше
             <img src="{% static 'images/wiht-arroy.svg' %}" alt="" class="Archive-arroy-btn-img">
         </a>
+    </section>
+    <section class="form-obrat">
+        <form action="" class="oc">
+            <div class="rating-form">
+                <h2 class="rating-title">Как Вам наш сайт?</h2>
+                <div class="diz">
+                    <div class="star-rating">
+                        {% for i in "54321" %}
+                        <input type="radio" id="design_star{{ i }}" name="design_rating" value="{{ i }}">
+                        <label for="design_star{{ i }}">
+                            <svg width="30" height="30" viewBox="0 0 24 24" class="star-icon">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                                    fill="currentColor" />
+                            </svg>
+                        </label>
+                        {% endfor %}
+                        <h5 class="diz-title">Дизайн</h5>
+                    </div>
+                    <div class="star-rating">
+                        {% for i in "54321" %}
+                        <input type="radio" id="usability_star{{ i }}" name="usability_rating" value="{{ i }}">
+                        <label for="usability_star{{ i }}">
+                            <svg width="30" height="30" viewBox="0 0 24 24" class="star-icon">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                                    fill="currentColor" />
+                            </svg>
+                        </label>
+                        {% endfor %}
+                        <h5 class="diz-title">Качество стримов</h5>
+                    </div>
+                    <div class="text-area">
+                        <textarea name="text" class="star-rating-area" placeholder="Ваши советы и пожелания"
+                            id=""></textarea>
+                    </div>
+                </div>
+            </div>
+            <button class="text-area-btn">Отправить</button>
+        </form>
     </section>
 </div>
 {% endblock %}
