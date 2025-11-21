@@ -6,7 +6,6 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-
 .linklogo {
     cursor: default
 }
@@ -20,12 +19,6 @@ a {
     text-decoration: none;
     color: #ffffff
 }
-
-
-.link-filter:hover {
-    font-size: 90%;
-}
-
 
 .header {
     background: #2d2d2d;
@@ -58,7 +51,6 @@ a {
     border-bottom: 1px solid #333;
 }
 
-
 .search-logo {
     width: 600px;
     height: 50px;
@@ -83,11 +75,7 @@ a {
 }
 
 .categoryy:hover {
-    transform: scale(1.3);
-}
-
-.search-logo:hover {
-    background: linear-gradient(185deg, #9147ff, #d04ed0);
+    transform: scale(1.1);
 }
 
 .main {
@@ -143,13 +131,11 @@ a {
 .left {
     display: inline;
     margin-right: 350px;
-
 }
 
 .right {
     display: inline;
     margin-left: 350px;
-
 }
 
 .text {
@@ -159,7 +145,6 @@ a {
     background: linear-gradient(185deg, #9147ff, #ff6b6b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
 }
 
 .filter-list {
@@ -169,15 +154,12 @@ a {
     list-style: none;
 }
 
-
-
 .filter-item {
     margin-right: 40px;
     font-size: 30px;
     line-height: 20px;
     font-family: "Inter", sans-serif;
 }
-
 
 .simple-trail {
     position: fixed;
@@ -195,24 +177,20 @@ a {
 a,
 input,
 button,
-
 .search-logo,
 .user,
 .linklogo {
     cursor: none !important;
 }
 
-input,
-.search-logo {
-    cursor: none !important;
-}
-
-
-
 .live-stream {
     text-align: center;
     margin-bottom: 40px;
     font-size: 35px;
+}
+
+.link-streamer {
+    height: 350px;
 }
 
 .streamer {
@@ -234,8 +212,6 @@ input,
     width: 100%;
     height: 250.25px;
 }
-
-
 
 .information {
     display: flex;
@@ -260,15 +236,9 @@ input,
     gap: 50px;
     align-content: center;
     grid-template-columns: repeat(auto-fill, 400px);
-    grid-template-rows: repeat(auto-fill, 400px);
+    grid-template-rows: repeat(auto-fill, 390px);
     justify-content: space-evenly;
     padding-right: 45px;
-}
-
-.streams {
-    display: flex;
-    justify-content: space-between;
-    margin: 40px auto;
 }
 
 .header-account {
@@ -280,7 +250,6 @@ input,
 .neck {
     width: 50%;
     display: flex;
-
 }
 
 .niekname-titlle {
@@ -309,11 +278,6 @@ input,
     background-color: #000;
     min-height: 90vh;
     padding: 70px 0 60px;
-}
-
-.nickname-titlle {
-    color: #ffffff;
-    margin-bottom: 5px;
 }
 
 .exit {
@@ -359,7 +323,6 @@ input,
     width: 60px;
     border-radius: 20px;
 }
-
 
 .ABOUT-name-btn {
     margin-bottom: 30px;
@@ -452,7 +415,7 @@ input,
     display: grid;
     grid-template-columns: repeat(auto-fill, 400px);
     grid-template-rows: repeat(auto-fill, 120px);
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 40px;
     margin-bottom: 30px;
 }
@@ -490,7 +453,6 @@ input,
 .arroy-img {
     height: 50px;
 }
-
 
 .Archive-title {
     font-size: 30px;
@@ -765,7 +727,6 @@ input,
     box-shadow: 0 4px 8px #000;
 }
 
-
 .videos-info {
     background-color: #B78EF3;
     border-bottom-right-radius: 40px;
@@ -836,7 +797,6 @@ input,
     gap: 20px;
     max-width: 1400px;
     margin: 0 auto;
-
 }
 
 .right-left {
@@ -943,21 +903,15 @@ input[type="password"] {
     color: #636363;
 }
 
-
-.rate-area>label:active {
-    position: relative;
-}
-
 .rating-form {
     margin: 20px 0;
     text-align: left;
 }
 
-
 .star-rating {
     display: flex;
     flex-direction: row-reverse;
-    justify-content:start;
+    justify-content: start;
     gap: 5px;
     margin-bottom: 15px;
     align-items: center;
@@ -1053,7 +1007,6 @@ input[type="password"] {
     margin-top: 250px;
     cursor: pointer;
     transition: all 0.3s;
-
 }
 
 .text-area-btn:hover {
@@ -1066,12 +1019,12 @@ input[type="password"] {
     justify-content: space-between;
     gap: 10px;
     width: 100%;
-    
 }
 
-.Archive{
+.Archive {
     margin-bottom: 50px;
 }
+
 
 
 @media (max-width: 1200px) {
@@ -1091,60 +1044,18 @@ input[type="password"] {
         height: auto;
     }
 
-
     .chat {
         max-width: auto;
         height: auto;
     }
 
     .treams {
-        grid-template-columns: repeat(auto-fill, 350px);
+        grid-template-columns: repeat(auto-fill, 450px);
         padding-right: 0;
     }
 
     .streamer {
-        width: 100%;
-    }
-}
-
-@media (max-width: 992px) {
-    .menu {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .streamer {
-        min-width: 400px;
-    }
-
-    .user-avatar {
-        min-width: 70px;
-    }
-
-
-    .search-logo {
-        width: 100%;
-        order: 3;
-    }
-
-    .glavni-stream {
-        flex-direction: column;
-    }
-
-    .glav-img {
-        width: 100%;
-        height: auto;
-    }
-
-    .chat {
-        max-width: auto;
-        height: auto;
-    }
-
-    .videos-list {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+        width: auto;
     }
 }
 
@@ -1158,14 +1069,8 @@ input[type="password"] {
         height: 40px;
     }
 
-
-
     .categoryy {
         font-size: 20px;
-    }
-
-    .user-avatar {
-        width: 70px;
     }
 
     .header-account {
@@ -1181,12 +1086,13 @@ input[type="password"] {
     }
 
     .treams {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, 400px);
+        grid-template-rows: repeat(auto-fill, 400px);
         justify-items: center;
     }
 
     .streamer {
-        min-width: 400px;
+        min-width: 450px;
     }
 
     .subscriptions-list {
@@ -1225,7 +1131,6 @@ input[type="password"] {
     }
 
     .container2 {
-
         transition: all 0.8s;
     }
 
@@ -1239,11 +1144,70 @@ input[type="password"] {
     }
 }
 
+@media (max-width: 992px) {
+    .menu {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .streamer {
+        min-width: 400px;
+        height: auto;
+    }
+
+    .link-streamer {
+        height: 400px;
+    }
+
+    .treams {
+        grid-template-columns: repeat(auto-fill, 400px);
+        grid-template-rows: repeat(auto-fill, 400px);
+        justify-items: center;
+    }
+
+    .search-logo {
+        width: 100%;
+        order: 3;
+    }
+
+    .glavni-stream {
+        flex-direction: column;
+    }
+
+    .glav-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .chat {
+        max-width: 500px;
+        align-self: center;
+        height: 300px;
+    }
+    
+
+    .videos-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
 
 @media (max-width: 784px) {
     .category-list {
         max-width: 300px;
         margin: 0 auto;
+    }   
+
+    .oc {
+        width: 500px;
+        height: auto;
+        padding-bottom: 0;
+    }
+
+    .text-area-btn {
+        margin-top: 270px;
+        padding: 5px 10px;
     }
 }
 
@@ -1260,11 +1224,27 @@ input[type="password"] {
         font-size: 16px;
     }
 
-
-
     .streamer {
-        width: 100%;
-        max-width: 320px;
+        min-width: 320px;
+        height: auto;
+    }
+
+    .rating-title {
+        font-size: 35px;
+    }
+
+    .link-streamer {
+        height: 300px;
+    }
+
+    .treams {
+        grid-template-columns: repeat(auto-fill, 300px);
+        grid-template-rows: repeat(auto-fill, 300px);
+        justify-items: center;
+    }
+
+    .name-stream {
+        font-size: 15px
     }
 
     .pr {
@@ -1282,7 +1262,6 @@ input[type="password"] {
     }
 
     .subscriptions-item {
-
         height: auto;
         border-radius: 20px;
     }
@@ -1317,7 +1296,6 @@ input[type="password"] {
         margin: 10px 0;
     }
 }
-
 
 @media (max-width: 360px) {
     .title {

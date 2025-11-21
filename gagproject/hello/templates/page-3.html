@@ -6,7 +6,7 @@
     <section class="glavni-stream">
         <div class="glav-steam-priews">
             {% if stream.preview %}
-                <img src="{{ stream.preview.url }}" alt="{{ stream.name }}" class="glav-img">
+                <video controls poster="{{ stream.preview.url }}" alt="{{ stream.name }}" class="glav-img">
             {% else %}
                 <img src="{% static 'images/glav-stream.jpg' %}" alt="{{ stream.name }}" class="glav-img">
             {% endif %}
