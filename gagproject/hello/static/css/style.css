@@ -58,6 +58,7 @@ a {
     border-radius: 10px;
     border: 3px solid #9147FF;
     font-size: 30px;
+    color: #fff;
     line-height: 40px;
     background-color: #2d2d2d;
     outline: none;
@@ -1069,6 +1070,14 @@ input[type="password"] {
         height: 40px;
     }
 
+    .link-streamer {
+        height: auto;
+    }
+
+    .live-stream {
+        font-size: 30px;
+    }
+
     .categoryy {
         font-size: 20px;
     }
@@ -1182,7 +1191,7 @@ input[type="password"] {
     .chat {
         max-width: 500px;
         align-self: center;
-        height: 300px;
+        height: 500px;
     }
     
 
@@ -1198,6 +1207,10 @@ input[type="password"] {
         max-width: 300px;
         margin: 0 auto;
     }   
+
+    .container3 {
+        padding-top: 100px;
+    }
 
     .oc {
         width: 500px;
@@ -1261,6 +1274,10 @@ input[type="password"] {
         font-size: 16px;
     }
 
+     .user-avatar {
+        width: 60px;
+    }
+
     .subscriptions-item {
         height: auto;
         border-radius: 20px;
@@ -1295,6 +1312,34 @@ input[type="password"] {
     .right {
         margin: 10px 0;
     }
+
+    .follow-btn {
+        width: auto;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .user-avatar {
+        width: 60px;
+    }
+
+    .oc {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-area-btn {
+        margin: 0 0 10px 0;
+        width: 100px;
+        font-size: 90%;
+        align-self: center;
+    }
+
+        .title {
+            margin-left: 80%;
+        }
 }
 
 @media (max-width: 360px) {
