@@ -57,7 +57,7 @@ a {
     padding-left: 10px;
     border-radius: 10px;
     border: 3px solid #9147FF;
-    font-size: 30px;
+    font-size: 1.875rem;
     color: #fff;
     line-height: 40px;
     background-color: #2d2d2d;
@@ -66,7 +66,7 @@ a {
 }
 
 .categoryy {
-    font-size: 25px;
+    font-size: 1.5625rem;
     font-weight: 700;
     text-transform: uppercase;
     background: linear-gradient(150deg, #4c0aaf, #ff02ff);
@@ -86,7 +86,7 @@ a {
 }
 
 .title {
-    font-size: 60px;
+    font-size: 3.75rem;
     margin: 0;
     font-family: "Inter", sans-serif;
     font-weight: 700;
@@ -157,7 +157,7 @@ a {
 
 .filter-item {
     margin-right: 40px;
-    font-size: 30px;
+    font-size: 1.875rem;
     line-height: 20px;
     font-family: "Inter", sans-serif;
 }
@@ -187,7 +187,7 @@ button,
 .live-stream {
     text-align: center;
     margin-bottom: 40px;
-    font-size: 35px;
+    font-size: 2.1875rem;
 }
 
 .link-streamer {
@@ -204,7 +204,7 @@ button,
 }
 
 .name-stream {
-    font-size: 18px;
+    font-size: 1.125rem;
     padding-left: 10px;
     margin: 10px 10px 0 0;
 }
@@ -221,7 +221,7 @@ button,
 .nick {
     text-align: center;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     background: linear-gradient(185deg, #9147ff, #ff6b6b);
     -webkit-background-clip: text;
@@ -254,7 +254,7 @@ button,
 }
 
 .niekname-titlle {
-    font-size: 30px;
+    font-size: 1.875rem;
 }
 
 .start-stream {
@@ -285,7 +285,7 @@ button,
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 15px;
+    font-size: 0.9375rem;
     margin-top: 15px;
 }
 
@@ -306,7 +306,7 @@ button,
     justify-content: space-evenly;
     width: 200px;
     font-weight: 700;
-    font-size: 19px;
+    font-size: 1.1875rem;
     align-items: center;
     gap: 10px;
     border-radius: 20px;
@@ -351,7 +351,7 @@ button,
     align-items: center;
     border-radius: 30px;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 0.9375rem;
     height: 40px;
     background-color: #fff;
     color: #9147FF;
@@ -365,7 +365,7 @@ button,
 
 .title-about-item {
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .subscriptions-item {
@@ -400,11 +400,11 @@ button,
 }
 
 .nickname {
-    font-size: 27px;
+    font-size: 1.6875rem;
 }
 
 .subscriptions-btn {
-    font-size: 20px;
+    font-size: 1.25rem;
     background: none;
     border: 2px solid #fff;
     border-radius: 30px;
@@ -422,7 +422,7 @@ button,
 }
 
 .subscriptions-title {
-    font-size: 30px;
+    font-size: 1.875rem;
     border-bottom: 2px solid #fff;
     width: 250px;
     padding-bottom: 15px;
@@ -456,7 +456,7 @@ button,
 }
 
 .Archive-title {
-    font-size: 30px;
+    font-size: 1.875rem;
     border-bottom: 3px solid #fff;
     padding-bottom: 20px;
     width: 200px;
@@ -492,7 +492,7 @@ button,
 }
 
 .Archive-names-stream {
-    font-size: 22px;
+    font-size: 1.375rem;
 }
 
 .Archive-list {
@@ -514,7 +514,7 @@ button,
     border: 3px solid #fff;
     align-items: center;
     gap: 10px;
-    font-size: 25px;
+    font-size: 1.5625rem;
 }
 
 .Archive-arroy-btn-img {
@@ -563,7 +563,7 @@ button,
 .chat-title {
     text-shadow: 3px 2px 2px #fff;
     color: #9147FF;
-    font-size: 25px;
+    font-size: 1.5625rem;
 }
 
 .message-text {
@@ -576,7 +576,7 @@ button,
 
 .chat-massage {
     width: auto;
-    font-size: 20px;
+    font-size: 1.25rem;
     height: 40px;
     color: #fff;
     border: 3px solid #fff;
@@ -614,7 +614,7 @@ button,
 }
 
 .user-streamer-title {
-    font-size: 25px;
+    font-size: 1.5625rem;
     color: #9147FF;
 }
 
@@ -632,7 +632,7 @@ button,
     justify-content: center;
     gap: 10px;
     color: #fff;
-    font-size: 23px;
+    font-size: 1.4375rem;
     font-weight: 700;
     width: 170px;
 }
@@ -662,7 +662,7 @@ button,
 }
 
 .last-title {
-    font-size: 25px;
+    font-size: 1.5625rem;
     background-color: #fff;
     color: #000;
     display: inline;
@@ -676,7 +676,7 @@ button,
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .last-priew-img {
@@ -703,7 +703,7 @@ button,
 
 .text-bd {
     margin-top: 10px;
-    font-size: 25px;
+    font-size: 1.5625rem;
     line-height: 35px;
 }
 
@@ -760,7 +760,7 @@ button,
 }
 
 .categories-streams-title {
-    font-size: 30px;
+    font-size: 1.875rem;
     text-transform: uppercase;
     border-bottom: 3px solid #fff;
     width: 250px;
@@ -769,7 +769,7 @@ button,
 }
 
 .categoris-streams-popular {
-    font-size: 25px;
+    font-size: 1.5625rem;
     border-bottom: 3px solid #fff;
     width: 200px;
     margin-bottom: 50px;
@@ -788,7 +788,7 @@ button,
 }
 
 .category-item-title {
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-bottom: 10px;
 }
 
@@ -827,7 +827,7 @@ button,
 }
 
 .login-title {
-    font-size: 70px;
+    font-size: 4.375rem;
     color: #fff;
     font-weight: 700;
     margin: 0 0 20px;
@@ -862,15 +862,15 @@ button,
 }
 
 input[type="email"] {
-    font-size: 25px;
+    font-size: 1.5625rem;
 }
 
 input[type="text"] {
-    font-size: 25px;
+    font-size: 1.5625rem;
 }
 
 input[type="password"] {
-    font-size: 25px;
+    font-size: 1.5625rem;
 }
 
 .logInt-btn {
@@ -882,7 +882,7 @@ input[type="password"] {
     border: none;
     box-shadow: 1px 3px 3px #4c0aaf;
     transition: all 0.4s;
-    font-size: 25px;
+    font-size: 1.5625rem;
     font-weight: 600;
     color: #fff;
 }
@@ -892,7 +892,7 @@ input[type="password"] {
 }
 
 .reg {
-    font-size: 19px;
+    font-size: 1.1875rem;
 }
 
 .logInt-btn:hover {
@@ -978,19 +978,19 @@ input[type="password"] {
 }
 
 .rating-title {
-    font-size: 40px;
+    font-size: 2.5rem;
     margin: 0 0 15px 0;
     text-align: left;
 }
 
 .rating-name {
-    font-size: 30px;
+    font-size: 1.875rem;
     margin: 10px 0;
     text-align: left;
 }
 
 .diz-title {
-    font-size: 25px;
+    font-size: 1.5625rem;
     margin: 10px 0;
     text-align: left;
     margin-right: 15px;
@@ -1001,7 +1001,7 @@ input[type="password"] {
     border-radius: 30px;
     color: #9747FF;
     padding: 10px 30px;
-    font-size: 20px;
+    font-size: 1.25rem;
     border: none;
     font-weight: 700;
     height: 60px;
@@ -1062,11 +1062,11 @@ input[type="password"] {
 
 @media (max-width: 1036px) {
     .title {
-        font-size: 40px;
+        font-size: 2.5rem;
     }
 
     .search-logo {
-        font-size: 20px;
+        font-size: 1.25rem;
         height: 40px;
     }
 
@@ -1075,11 +1075,11 @@ input[type="password"] {
     }
 
     .live-stream {
-        font-size: 30px;
+        font-size: 1.875rem;
     }
 
     .categoryy {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     .header-account {
@@ -1230,11 +1230,11 @@ input[type="password"] {
     }
 
     .title {
-        font-size: 32px;
+        font-size: 2rem;
     }
 
     .search-logo {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .streamer {
@@ -1243,7 +1243,7 @@ input[type="password"] {
     }
 
     .rating-title {
-        font-size: 35px;
+        font-size: 2.1875rem;
     }
 
     .link-streamer {
@@ -1257,7 +1257,7 @@ input[type="password"] {
     }
 
     .name-stream {
-        font-size: 15px
+        font-size: 0.9375rem
     }
 
     .pr {
@@ -1271,7 +1271,7 @@ input[type="password"] {
 
     .btn-start {
         width: 200px;
-        font-size: 16px;
+        font-size: 1rem;
     }
 
      .user-avatar {
@@ -1315,7 +1315,7 @@ input[type="password"] {
 
     .follow-btn {
         width: auto;
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 }
 
@@ -1344,7 +1344,7 @@ input[type="password"] {
 
 @media (max-width: 360px) {
     .title {
-        font-size: 28px;
+        font-size: 1.75rem;
     }
 
     .streamer {
@@ -1352,15 +1352,15 @@ input[type="password"] {
     }
 
     .name-stream {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .nick {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .btn-start {
         width: 180px;
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 }
